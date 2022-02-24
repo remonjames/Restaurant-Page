@@ -1,0 +1,238 @@
+@font-face {
+    font-family: 'JetBrains';
+    src: url('./JetBrainsMono-Regular.ttf') format('ttf'),
+    url('./SourceSansPro-Regular.ttf') format('ttf');
+    }
+@font-face {
+    font-family: 'SourceSansPro';
+    src: url('./SourceSansPro-Regular.ttf') format('ttf');
+    }
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html, body {
+    height: 100%;
+}
+
+body{
+    font-size: 10px;
+    text-align: center;
+    font-family: 'SourceSansPro', sans-serif;
+}
+
+#content {
+    min-height: 100%;
+    display: grid;
+    grid-template-rows: auto 1fr auto;
+}
+
+/************** Header **************/
+
+header {
+
+    display: flex;
+    min-width: 100%;
+    justify-content: space-between;
+    height: 50px;
+    align-items: center;
+    padding: 20px;
+    background-color: black;
+    color: white;
+}
+
+header > span {
+    font-family: 'JetBrains', monospace;
+    font-size: 1.5rem;
+}
+
+header ul {
+    display: flex;
+    list-style: none;
+    justify-content: flex-end;
+    gap: 50px;
+    flex-basis: 40%;
+    margin-right: 20px;
+}
+
+header ul li {
+    font-size: 1rem;
+}
+
+/************** HOMEPAGE **************/
+
+.homeContainer {
+    display: grid;
+    height: calc(100vh - 90px);
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+}
+
+.leftImg {
+    grid-column: 1 / 2;
+    align-self: stretch;
+    width: 100%;
+    height: 100%;
+}
+
+.homeContent {
+    grid-column: 2 / 3;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    padding: 40px;
+}
+
+.restaurantName {
+    font-family: 'JetBrains', monospace;
+    font-size: 5rem;
+    padding-bottom: 40px;
+}
+
+.shortTagline {
+    font-style: italic;
+    font-size: 2rem;
+    padding-bottom: 20px;
+}
+
+.longTagline {
+    font-size: 1.5rem;
+}
+
+/*************** MENU ****************/
+
+.menuContainer {
+    display: flex;
+    flex-direction: column;
+}
+
+.menuContainer h1 {
+    padding: 20px 0 40px;
+    font-size: 2rem;
+}
+
+.menuItemsContainer {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    height: 100%;
+    gap: 20px;
+}
+
+.menuItemCard {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    height: 300px;
+}
+
+.menuItemCard h2 {
+    font-size: 1.25rem;
+}
+
+.menuItemCard p {
+    font-size: 1rem;
+    font-style: italic;
+}
+
+.menuItemCard img {
+    width: 75%;
+    height: 75%;
+    border-radius: 10px;
+}
+
+/************** CONTACT ***************/
+
+.contactContainer {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    height: calc(100vh - 90px);
+    align-items: center;
+}
+
+.contactInfo {
+    grid-column: 1 / 2;
+    font-size: 1rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+}
+
+.contactInfo h1 {
+    font-size: 3rem;
+    padding-bottom: 40px;
+}
+
+.contactInfo h2 {
+    font-size: 1.5rem;
+}
+
+.contactInfo h2 + p {
+    padding-bottom: 20px;
+}
+
+.rightImg {
+    grid-column: 2 / 3;
+    align-self: stretch;
+    width: 100%;
+    height: 100%;
+}
+
+
+/************** FOOTER ***************/
+
+footer {
+    grid-row: 3 / 4;
+    display: flex;
+    min-width: 100%;
+    height: 20px;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    background-color: maroon;
+}
+
+footer a {
+    font-size: 1rem;
+    color: white;
+    text-decoration: none;
+}
+
+
+@media screen and (max-width: 800px) {
+    .homeContainer {
+        grid-template-columns: 4fr 1fr;
+    }
+
+    .restaurantName {
+        font-size: 4rem;
+    }
+
+    .shortTagline {
+        font-size: 1.5rem;
+    }
+
+    .longTagline {
+        font-size: 1rem;
+    }
+
+    .contactInfo h1 {
+        font-size: 2rem;
+    }
+
+    .contactInfo h2 {
+        font-size: 1.25rem;
+    }
+
+    .contactInfo p {
+        font-size: 1rem;
+    }
+
+}
+
